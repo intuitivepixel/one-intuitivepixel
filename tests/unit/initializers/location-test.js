@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { initialize } from 'commently/initializers/location';
+import { initialize } from 'one-intuitivepixel/initializers/location';
 import { module, test } from 'qunit';
 import destroyApp from '../../helpers/destroy-app';
 
