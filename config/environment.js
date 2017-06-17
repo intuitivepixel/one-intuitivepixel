@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'intuitivepixel',
+    modulePrefix: 'one-intuitivepixel',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
