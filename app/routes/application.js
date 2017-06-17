@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { default as math } from 'math';
+//import { default as math } from 'math';
 
 const { getOwner } = Ember;
 
@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 
     beforeModel() {
         this._super(... arguments);
-        this.set('someNumber', math.random());
+        //this.set('someNumber', math.random());
     },
 
     setupController(controller) {
