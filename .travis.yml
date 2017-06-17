@@ -28,7 +28,6 @@ before_install:
 - npm config set spin false
 install:
 - npm install
-- bower install
 script:
 - ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
 deploy:
