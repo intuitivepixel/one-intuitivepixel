@@ -1,5 +1,24 @@
 /* eslint-env node */
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Filter = require('broccoli-filter');
+
+function CopyrightFilter(inputNode) {
+  Filter.call(this, inputNode);
+}
+
+CopyrightFilter.prototype = Object.create(Filter.prototype);
+
+CopyrightFilter.prototype.processString = function(existingString) {
+  var c = `
+  /*
+   * Copyright (c) 2017 Alessandro D\'Aquino
+   * ${new Date().toString()}
+   */\n${existingString}`;
+  return c;
+}
+
+CopyrightFilter.prototype.extensions = ['js'];
+CopyrightFilter.prototype.targetExtension = ['js'];
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -19,5 +38,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  return new CopyrightFilter(app.toTree());
 };

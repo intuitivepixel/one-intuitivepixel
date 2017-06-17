@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'commently',
+    modulePrefix: 'intuitivepixel',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
