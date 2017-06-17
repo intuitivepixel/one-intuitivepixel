@@ -1,21 +1,18 @@
----
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-
+  - $HOME/.npm
 before_install:
-  - npm config set spin false
-  - npm install -g phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-
+- npm install
 script:
-  - npm test
+- npm test
+deploy:
+  api_key:
+    secure: gaoT+oc5pyr/ca5l7cKdF1YEP+pJc+JGWMMbtRsuPArZBCxDEACa/VLC/az5KeeUE9jjdkj4Sz+0+6f9buN2DIl2czz4bhV0sGDXAjaSkCw7SjrxWtWy0nkdYxwnerogeayhJgjd4kzTbH6W+f35iSHEysFSKHCSE8yklphovFJruVOAMXEtV6BbkCMvvzIo2kjQAleDgYMsdznU6NC7Fs76/GfhwxeGC8Gs9bpEzMI4ditzXsC4mXv7F+IIBTZh/whxP5VOccU0y7X/wenxnh14FJRAwrEj2TKWkUquw0f2TATOqRy5nFfx8ck4peCwEk4NClRFWuofud6KfPfU8mqpbcSgeNoLFcuh9WnE9/2a3HN2lWHtiBWs/kzo/J9BPCbtf3WPExBVsxvTIim71mPvuTH7R4lWZR8W+bJp+e7ps0I40sBI1l/W0H0Y4ix5x5Hb7EbPqDD8IUXzSOkSDoiJPssniZND/ONUvNe5X6KmwXDNzjSr3BVx+tFKlkQU4IN5i5c3T0dEzneBsuFiTkm6qxPFdcZBrAYBgFcgm6IuPAxh9ubREoGnlJzGlAdS8JBCdUPq/N/HPIxYY934VXwVhnc2NCbCY+7RSMPrQJzBT5SsiRUc9Xmm4+1EXG95iklAIa3CklG+Q1GTEiDR0YyXPDBCjo5HfLoTJg4aHlA=
