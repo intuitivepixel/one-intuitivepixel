@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- stable
+- '6'
 dist: trusty
 sudo: required
 addons:
@@ -11,17 +11,7 @@ addons:
     - google-chrome-stable
 cache:
   directories:
-  - node_modules
-env:
-- EMBER_TRY_SCENARIO=default
-- EMBER_TRY_SCENARIO=ember-1.13
-- EMBER_TRY_SCENARIO=ember-release
-- EMBER_TRY_SCENARIO=ember-beta
-- EMBER_TRY_SCENARIO=ember-canary
-matrix:
-  fast_finish: true
-  allow_failures:
-  - env: EMBER_TRY_SCENARIO=ember-canary
+  - $HOME/.npm
 before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
@@ -29,7 +19,7 @@ before_install:
 install:
 - npm install
 script:
-- ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
+- npm test
 deploy:
   api_key:
-    secure: FhP6kADvc+GnPvBbs5buwPTS9lEzzoCHHCgf62N4Kl2gH01mFwzmZtRht43v+l/HIORab2YyT5KcJbIB6WxBsQjsx5WdG+xf+GTwlRV8T4/XgKvHhgPvhBwn+ri7Z2ZPF+Kxm3cxVxQkltnbP0r3aMt+ku1P8JdkEuj8BYcCjhbaGZwEYdV/O6ZVpHKqhvPZXzgUgmraxbQGMzKYArky6koKYdO7UiqDQwvlLnIjd1s/541yWgdVHKz/1nybufAdovlnTsEQjlvLTIkHzO64t6jEFwQvtK53+Dapba7PbSPV2QO1vjgXNo+M9nMXyks2+gd1Jku+HsjMZcI+37RiUzZQwaK2E9F+BsWTUcy/k/Y+LxNkfoV5zTfmbtUkr2P2zjkK3UYF3D56zxYG+Dx+7kK9UTGkruvOqWGryJkYZhf1do6gg4hpvT7QIr8jVAIBsp0GfXikCMFB7DZAIC1+ilbGLosf5ldOJ3TGaor8nCAyn2114rPF1SSmB+NeRG4VAoSE3/AbxO8HuEOt22oDzgixdtuSDNhD7sWysu9ZSiEWtITKEPIZ5pwI3t6Z8eQ7KzGuggxEIt6Y5vg4hW5tKZGWY8H9uwV75S1ckVB9sypxiSEp1+CML8ENSYDjKinUIXe20tm22XarVnC3ANol/lSTb2TCKIr53ONvMs0f83g=
+    secure: gaoT+oc5pyr/ca5l7cKdF1YEP+pJc+JGWMMbtRsuPArZBCxDEACa/VLC/az5KeeUE9jjdkj4Sz+0+6f9buN2DIl2czz4bhV0sGDXAjaSkCw7SjrxWtWy0nkdYxwnerogeayhJgjd4kzTbH6W+f35iSHEysFSKHCSE8yklphovFJruVOAMXEtV6BbkCMvvzIo2kjQAleDgYMsdznU6NC7Fs76/GfhwxeGC8Gs9bpEzMI4ditzXsC4mXv7F+IIBTZh/whxP5VOccU0y7X/wenxnh14FJRAwrEj2TKWkUquw0f2TATOqRy5nFfx8ck4peCwEk4NClRFWuofud6KfPfU8mqpbcSgeNoLFcuh9WnE9/2a3HN2lWHtiBWs/kzo/J9BPCbtf3WPExBVsxvTIim71mPvuTH7R4lWZR8W+bJp+e7ps0I40sBI1l/W0H0Y4ix5x5Hb7EbPqDD8IUXzSOkSDoiJPssniZND/ONUvNe5X6KmwXDNzjSr3BVx+tFKlkQU4IN5i5c3T0dEzneBsuFiTkm6qxPFdcZBrAYBgFcgm6IuPAxh9ubREoGnlJzGlAdS8JBCdUPq/N/HPIxYY934VXwVhnc2NCbCY+7RSMPrQJzBT5SsiRUc9Xmm4+1EXG95iklAIa3CklG+Q1GTEiDR0YyXPDBCjo5HfLoTJg4aHlA=
